@@ -1,0 +1,60 @@
+###############################################################################
+# Change these for new experiment
+###############################################################################
+dataName <- 'Cru_0.5'
+
+startYear <- 1951
+endYear   <- 2016
+
+pptData <- 'cruSeasonal_0.5.Rda'
+
+countCutoff <- 2
+
+plotting <- TRUE
+
+topYears <- 11
+
+# name the project (what figure and data directories are called!)
+projectName <- 'TestCase'
+
+###############################################################################
+# Change these for using a different raw data source
+###############################################################################
+cleaningData <- FALSE
+
+cruFile <- 'cruts4.01_0.5_1901_2016.nc'
+
+cruStartYear <- 1950
+cruEndYear   <- 2016
+
+
+###############################################################################
+# Namelist pieces that will generally remain constant between experiments
+###############################################################################
+# Libraries needed
+library(fields)
+library(RColorBrewer)
+library(ncdf4)
+
+
+# Load my user functions
+source('Code/Functions.R')
+
+# Directories for intermediate steps, output, and figures
+ddir <- sprintf('Data/%sData',projectName)
+plotdir <- sprintf('Figures/%sFigures',projectName)
+
+# Build necessary directories if needed
+dir.create(ddir, showWarnings = FALSE)
+dir.create(plotdir, showWarnings = FALSE)
+dir.create(sprintf('%s/empiricalProbs',plotdir), showWarnings = FALSE)
+dir.create(sprintf('%s/pVals',plotdir), showWarnings = FALSE)
+
+# alpha
+alpha <- 0.85
+
+# dry mask threshold (mm)
+dryCutoff <- 10
+
+# allow a different cutoff for area calculation (must be at least alpha)
+areaSigCutoff <- alpha
