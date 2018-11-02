@@ -46,6 +46,7 @@ plotdir <- sprintf('Figures/%sFigures',projectName)
 
 # Build necessary directories if needed
 dir.create(ddir, showWarnings = FALSE)
+dir.create('Figures', showWarnings = FALSE)
 dir.create(plotdir, showWarnings = FALSE)
 dir.create(sprintf('%s/empiricalProbs',plotdir), showWarnings = FALSE)
 dir.create(sprintf('%s/pVals',plotdir), showWarnings = FALSE)
