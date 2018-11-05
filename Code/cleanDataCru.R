@@ -1,4 +1,5 @@
 # Read in the netcdf file
+library(ncdf4)
 handle <- nc_open(sprintf('Data/Raw/%s',cruFile))
 
 lon <- ncvar_get(handle,'lon')

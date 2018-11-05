@@ -34,7 +34,7 @@ cruEndYear   <- 2016
 # Libraries needed
 library(fields)
 library(RColorBrewer)
-library(ncdf4)
+
 
 
 # Load my user functions
