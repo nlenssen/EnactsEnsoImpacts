@@ -9,7 +9,7 @@ lat <- ncvar_get(handle,'lat')
 time <- ncvar_get(handle,'time')
 
 tFull <- seq(1901,2016+1,length=length(time)+1)[1:length(time)]
-year <- floor(tFull)
+year  <- floor(tFull)
 month <- rep(1:12,length(time)/12)
 
 fullTimeMat <- cbind(year,month)
